@@ -28,6 +28,8 @@ font-family: 'Roboto', sans-serif; */
   --footer-text-color: rgba(255, 255, 255, 0.6);
   --border-box-color: #eeeeee;
   --border-header-color: #ececec;
+  --social-logo-color: #afb1b8;
+  --white-color: #fff;
 }
 
 img {
@@ -48,10 +50,27 @@ body {
   background-color: var(--accent-color);
 }
 
+/* Universal clases */
+
 .container {
   width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-decoration: none;
 }
 
 /* Section */
@@ -90,6 +109,8 @@ body {
 /* HEADER */
 
 .header {
+  max-width: 1600px;
+  margin: 0 auto;
   border-bottom: 1px solid var(--border-header-color);
 }
 
@@ -125,28 +146,13 @@ body {
 
   color: var(--second-logo-color);
   text-decoration: none;
-
-  
 }
+
 .logo-brand {
   color: var(--accent-color);
 }
 
 /* Site Nav */
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.link {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-}
 
 .nav-link {
   display: block;
@@ -156,14 +162,24 @@ body {
 }
 
 .link-contact {
+  display: inline-flex;
+  align-content: center;
   padding: 32px 0;
 
   color: inherit;
 }
 
+.icon-header {
+  margin-right: 10px;
+}
+
 .link:hover,
 .link:focus {
   color: var(--accent-color);
+}
+
+.icon-header {
+  fill: currentColor;
 }
 
 .link.carrent {
@@ -178,6 +194,23 @@ body {
 
   background-color: var(--secondary-bg-color);
   text-align: center;
+}
+
+.overlay {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero-beckground.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -229,6 +262,32 @@ body {
   margin-right: 30px;
 }
 
+.feature-pre-block {
+  height: 120px;
+  display: block;
+
+  background-color: var(--accent-bg-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 25px 100px;
+}
+
+.icon-anthena::before {
+  background-image: url(../images/antenna.png);
+}
+
+.icon-clock::before {
+  background-image: url(../images/clock.png);
+}
+
+.icon-diagram::before {
+  background-image: url(../images/diagram.png);
+}
+
+.icon-astronavt::before {
+  background-image: url(../images/astronaut.png);
+}
+
 .features-list .title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -259,6 +318,8 @@ body {
 /* Team */
 
 .team {
+  max-width: 1600px;
+  margin: 0 auto;
   background-color: var(--accent-bg-color);
 }
 
@@ -300,12 +361,92 @@ body {
   color: var(--primary-text-color);
 }
 
+.social-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.social-item {
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+}
+
+.social-item:last-child {
+  margin-right: 0px;
+}
+
+.social-link {
+  display: inline-block;
+  background-color: transparent;
+  padding: 12px;
+  border-radius: 50%;
+  color: var(--social-logo-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: var(--white-color);
+  background-color: var(--accent-color);
+}
+
+.social-icon {
+  fill: currentColor;
+  display: block;
+}
+
+/* Clients */
+
+.clients-list {
+  display: flex;
+}
+
+.clients-item {
+  margin-right: 30px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+}
+
+.clients-item:last-child {
+  margin: 0;
+}
+
+.client-link {
+  display: block;
+  padding: 16px 32px;
+  color: #afb1b8;
+}
+
+.clients-item:hover,
+.clients-item:focus {
+  fill: #2196f3;
+  border: 1px solid #2196f3;
+}
+
+.client-icon {
+  display: block;
+  fill: currentColor;
+}
+
 /* Footer */
 
 .footer {
   background-color: var(--secondary-bg-color);
   padding-top: 60px;
   padding-bottom: 60px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.footer .container {
+  display: flex;
+}
+
+.footer-contact {
+  margin-right: 70px;
 }
 
 .footer-logo {
@@ -329,6 +470,47 @@ body {
 
 .footer-address {
   color: var(--hero-text-color);
+}
+
+.footer-social .footer-list {
+  display: flex;
+}
+
+.footer-title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--white-color);
+}
+
+.social-footer-item {
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+}
+
+.social-footer-item:last-child {
+  margin-right: 0;
+}
+
+.social-footer-link {
+  display: block;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-footer-link:hover,
+.social-footer-link:focus {
+  background-color: var(--accent-color);
+}
+
+.footer-social-icon {
+  fill: var(--white-color);
+  display: block;
 }
 
 /* Portfolio */
@@ -399,6 +581,12 @@ body {
   display: inline-block;
 }
 
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .cont-text {
   padding: 20px 24px;
   border: 1px solid var(--border-box-color);
@@ -407,7 +595,7 @@ body {
 .portfolio-title {
   margin: 0;
   margin-bottom: 4px;
- 
+
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -417,7 +605,7 @@ body {
 
 .portfolio-text {
   margin: 0;
- 
+
   font-weight: 400;
   font-size: 16px;
   line-height: 1.88;
